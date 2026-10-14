@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>몽글책방 | 유아 그림책 출판사</title>
+<style>
+
+:root{--ink:#2b2d3a;--muted:#74788a;--paper:#fffdf9;--line:#ece8df;--pale:#fff7ed;--accent:#ff8b62;--accent2:#ffd36e;--mint:#bce8d5;--lav:#dcd2ff;--shadow:0 16px 50px rgba(56,47,31,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:'Noto Sans KR',sans-serif;color:var(--ink);background:var(--paper)}a{text-decoration:none;color:inherit}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0}.container{width:min(1120px,calc(100% - 40px));margin:0 auto}.topbar{position:sticky;top:0;z-index:20;background:rgba(255,253,249,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(236,232,223,.9)}.topbar-inner{height:76px;display:flex;align-items:center;gap:34px}.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}.brand-mark{width:38px;height:38px;border-radius:13px;display:grid;place-items:center;background:var(--accent2);font-family:Jua,sans-serif;font-size:21px}.nav{display:flex;gap:23px;flex:1}.nav a{font-size:14px;color:#65697a}.nav a:hover{color:var(--ink)}.header-actions{display:flex;align-items:center;gap:7px}.icon-btn,.cart-btn{background:transparent;border-radius:12px;padding:9px}.cart-btn{background:#fff0e8;font-weight:700}.manager-link{font-size:12px;color:#8d7b66;margin-left:6px}.hero{overflow:hidden;background:linear-gradient(135deg,#fff6e8,#f6fbff)}.hero-grid{min-height:540px;display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}.eyebrow{font-size:11px;letter-spacing:2px;font-weight:800;color:#c98968;margin-bottom:10px}.hero h1{font-family:Jua,sans-serif;font-size:56px;line-height:1.08;margin:0 0 18px}.hero h1 span{color:#ef8661}.hero p{font-size:16px;line-height:1.8;color:var(--muted);max-width:500px}.hero-buttons{display:flex;gap:10px;margin:28px 0 22px}.primary-btn,.secondary-btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border-radius:14px;font-weight:800}.primary-btn{background:var(--ink);color:#fff}.secondary-btn{background:#fff;border:1px solid var(--line)}.hero-points{display:flex;gap:16px;color:#77715f;font-size:12px}.hero-illustration{height:430px;position:relative}.storybook-hero{position:absolute;left:18%;top:17%;width:280px;height:330px;background:linear-gradient(145deg,#ffd9c5,#ffb390);border-radius:26px 18px 30px 14px;transform:rotate(-6deg);box-shadow:var(--shadow);border:8px solid rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;flex-direction:column;overflow:hidden}.storybook-hero:after{content:'';position:absolute;width:120px;height:120px;border-radius:50%;background:#fff5e2;right:-20px;bottom:-15px;opacity:.8}.book-title{font-family:Jua,sans-serif;font-size:30px;line-height:1.2;text-align:center;z-index:2}.rabbit{font-size:76px;z-index:2;margin-top:20px}.sun{position:absolute;right:18%;top:4%;font-size:52px}.cloud{position:absolute;background:#fff;border-radius:50px;opacity:.85}.c1{width:130px;height:42px;left:5%;top:12%}.c2{width:95px;height:34px;right:3%;top:26%}.grass{position:absolute;left:3%;right:0;bottom:0;height:80px;background:#cce9ca;border-radius:60% 60% 0 0}
+.section{padding:76px 0}.section.pale{background:var(--pale)}.section-heading{display:flex;align-items:end;justify-content:space-between;margin-bottom:28px}.section-heading h2{font-family:Jua,sans-serif;font-size:34px;margin:0}.text-link{font-size:13px;font-weight:800}.age-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.age-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px;text-align:left;box-shadow:0 7px 22px rgba(60,48,28,.04);transition:.2s}.age-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.age-card span{font-size:32px;display:block;margin-bottom:18px}.age-card strong{display:block;font-size:17px}.age-card small{display:block;color:var(--muted);margin-top:5px}.book-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.book-card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 8px 26px rgba(57,46,32,.05);position:relative}.book-cover{height:245px;display:flex;align-items:center;justify-content:center;position:relative;cursor:pointer}.book-cover .cover-emoji{font-size:76px}.book-cover .cover-title{position:absolute;left:18px;top:18px;right:18px;font-family:Jua,sans-serif;font-size:22px;line-height:1.25}.book-info{padding:16px}.book-name{font-weight:800;cursor:pointer}.meta{color:var(--muted);font-size:12px;margin-top:5px}.price-row{display:flex;align-items:center;justify-content:space-between;margin-top:14px}.price{font-weight:900}.book-actions{display:flex;gap:7px}.mini-btn{background:#f7f4ee;border-radius:10px;padding:8px 10px;font-size:12px}.like-btn.liked{background:#ffe6ea;color:#ef5367}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px;align-items:center}.about-grid h2{font-family:Jua,sans-serif;font-size:43px;line-height:1.2;margin:0}.about-copy{font-size:15px;color:#666;line-height:1.9}.signature{font-family:Jua,sans-serif;font-size:18px;color:#8e7966;margin-top:20px}footer{background:#292a33;color:#f8f4ea;padding:34px 0}.footer-inner{display:flex;justify-content:space-between;align-items:end}.footer-small{font-size:11px;color:#aaa}.search-panel{display:flex;gap:8px;margin:-6px 0 20px}.search-panel input{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#fff}.search-panel button{border:1px solid var(--line);border-radius:12px;background:#fff;padding:0 16px}.hidden{display:none!important}.filter-row{display:flex;gap:8px}.filter-row select{border:1px solid var(--line);padding:9px 12px;border-radius:10px;background:#fff}
+.modal{border:0;border-radius:22px;padding:0;width:min(560px,calc(100% - 24px));box-shadow:0 30px 100px rgba(0,0,0,.18)}.modal::backdrop{background:rgba(20,20,25,.35);backdrop-filter:blur(4px)}.modal-head{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h3{margin:0;font-family:Jua,sans-serif;font-size:23px}.close-btn{background:transparent;font-size:28px;color:#999}.modal-body,.modal>div:not(.modal-head){padding:22px}.detail-cover{height:260px;border-radius:18px;display:grid;place-items:center;margin-bottom:18px}.detail-cover .cover-emoji{font-size:86px}.detail-title{font-family:Jua,sans-serif;font-size:28px;margin:0 0 6px}.detail-desc{line-height:1.8;color:#666;font-size:14px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:22px}.form-grid label,.login-card label{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:700}.form-grid input,.form-grid textarea,.login-card input{border:1px solid var(--line);border-radius:11px;padding:11px 12px;background:#fff}.form-grid textarea{min-height:90px;resize:vertical}.form-grid .full{grid-column:1/-1}.cart-item{display:flex;justify-content:space-between;gap:10px;padding:13px 0;border-bottom:1px solid var(--line)}.cart-total{display:flex;justify-content:space-between;font-weight:900;font-size:16px;padding:17px 0}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:#292a33;color:#fff;padding:12px 18px;border-radius:99px;opacity:0;pointer-events:none;transition:.25s;z-index:99;font-size:13px}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.manager-login-screen{min-height:100vh;display:grid;place-items:center;background:linear-gradient(135deg,#fff4e5,#f4f8ff);padding:20px}.login-card{width:min(430px,100%);background:#fff;border:1px solid var(--line);padding:34px;border-radius:24px;box-shadow:var(--shadow)}.center{justify-content:center}.login-card>p{text-align:center;color:var(--muted);font-size:13px;margin:18px 0 24px}.login-card form{display:grid;gap:14px}.login-card .primary-btn{width:100%;margin-top:5px}.demo-note{display:block;text-align:center;color:#9a8d7e;margin-top:13px}.back-link{display:block;text-align:center;margin-top:20px;font-size:12px;color:#777}.manager-app{min-height:100vh;display:flex;background:#f7f7f4}.sidebar{width:238px;background:#292a33;color:#f4f1ea;padding:25px 16px;display:flex;flex-direction:column;position:fixed;inset:0 auto 0 0}.sidebar .brand{margin:0 10px 34px}.sidebar .brand-mark{background:#ffd36e;color:#292a33}.admin-label{font-size:9px;letter-spacing:2px;color:#a9aab3;padding:0 12px 10px}.side-link{width:100%;text-align:left;background:transparent;color:#c7c8d0;border-radius:12px;padding:12px 13px;margin-bottom:5px}.side-link.active,.side-link:hover{background:#3b3c48;color:#fff}.sidebar-bottom{margin-top:auto;display:grid;gap:8px}.sidebar-bottom a,.sidebar-bottom button{color:#bfc0ca;background:transparent;text-align:left;padding:10px 12px;border-radius:10px}.manager-main{margin-left:238px;width:calc(100% - 238px);padding:32px 38px}.manager-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:25px}.manager-top h1{font-family:Jua,sans-serif;font-size:36px;margin:0}.manager-user{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13px}.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.stat-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.stat-label{color:var(--muted);font-size:12px}.stat-value{font-size:28px;font-weight:900;margin-top:8px}.manager-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin-top:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}.panel h3{margin:0 0 14px;font-size:15px}.table-wrap{overflow:auto}.data-table{width:100%;border-collapse:collapse;font-size:12px}.data-table th,.data-table td{padding:12px 10px;border-bottom:1px solid #eee;text-align:left;white-space:nowrap}.data-table th{color:#888;font-weight:700;background:#faf9f6}.status{display:inline-block;padding:5px 9px;border-radius:99px;background:#f1f1f1}.status.ready{background:#fff0db}.status.shipping{background:#e9f3ff}.status.done{background:#e8f7ec}.manager-toolbar{display:flex;justify-content:space-between;gap:10px;margin-bottom:15px}.manager-toolbar input,.manager-toolbar select{border:1px solid var(--line);border-radius:10px;padding:10px;background:#fff}.toolbar-search{flex:1}.action-link{font-weight:800;background:#f4f1eb;border-radius:9px;padding:7px 10px;font-size:11px}.book-admin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.admin-book{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}.admin-book .book-cover{height:170px}.admin-book .book-info{padding:13px}.pill{font-size:10px;padding:5px 8px;background:#f2f0eb;border-radius:99px}.member-card{border:1px solid var(--line);background:#fff;border-radius:15px;padding:15px;display:flex;justify-content:space-between;gap:10px;align-items:center}.member-list{display:grid;gap:10px}.member-main{display:flex;gap:12px;align-items:center}.avatar{width:42px;height:42px;border-radius:50%;background:#ffe2cc;display:grid;place-items:center;font-size:18px}.member-name{font-weight:800}.member-meta{font-size:11px;color:var(--muted);margin-top:3px}.detail-list{display:grid;gap:10px}.detail-row{display:flex;justify-content:space-between;gap:20px;padding:10px 0;border-bottom:1px solid #eee;font-size:13px}.detail-row strong{color:#777;font-weight:600}.notice{padding:13px 15px;background:#fff8e9;border-radius:12px;font-size:12px;color:#7c674b;margin-bottom:15px}
+
+.menu-btn{width:38px;height:38px;border-radius:12px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;align-content:center;gap:4px;padding:7px}.menu-btn span{display:block;width:17px;height:2px;background:#3a3b45;border-radius:2px}.menu-backdrop{position:fixed;inset:0;background:rgba(30,30,35,.24);z-index:80;backdrop-filter:blur(2px)}.side-drawer{position:fixed;top:0;right:0;bottom:0;width:min(320px,86vw);background:#fff;z-index:90;transform:translateX(105%);transition:transform .24s ease;box-shadow:-18px 0 55px rgba(0,0,0,.12);padding:20px}.side-drawer.open{transform:translateX(0)}.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:4px 2px 18px;border-bottom:1px solid var(--line)}.drawer-nav{display:grid;gap:8px;padding:18px 0}.drawer-nav a,.drawer-nav button{display:block;text-align:left;background:#faf8f3;color:var(--ink);padding:13px 14px;border-radius:12px;font-weight:800}.drawer-nav a:hover,.drawer-nav button:hover{background:#f4efe6}.drawer-note{margin-top:10px;color:#8a8278;font-size:11px;line-height:1.6}.auth-dialog{width:min(500px,calc(100% - 24px));padding-bottom:20px}.auth-tabs{display:grid;grid-template-columns:1fr 1fr;padding:0 22px;border-bottom:1px solid var(--line)}.auth-tab{background:transparent;padding:13px 6px;color:#8b8b90;font-weight:800;border-bottom:2px solid transparent}.auth-tab.active{color:var(--ink);border-color:#ef8661}.auth-form{display:grid;grid-template-columns:1fr 1fr;gap:13px;padding:22px}.auth-form label{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:700}.auth-form input{border:1px solid var(--line);border-radius:11px;padding:11px 12px;background:#fff}.auth-form .primary-btn{grid-column:1/-1;width:100%;margin-top:2px}.auth-form label.full-field{grid-column:1/-1}.auth-message{margin:16px 22px 0;padding:10px 12px;border-radius:11px;background:#f5f5f3;font-size:12px;color:#666;display:none}.auth-message.show{display:block}.auth-message.error{background:#fff0f0;color:#c65d6d}.auth-demo{padding:0 22px;color:#9a948b;font-size:10px;line-height:1.5}
+.live-order-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border-radius:14px;background:#eff9f3;border:1px solid #d7ebde;margin-bottom:15px;font-size:12px}.live-dot{width:8px;height:8px;border-radius:50%;background:#48ad71;display:inline-block;margin-right:7px;box-shadow:0 0 0 5px rgba(72,173,113,.12)}
+@media(max-width:900px){.nav{display:none}.hero-grid,.about-grid,.manager-grid{grid-template-columns:1fr}.hero-illustration{height:340px}.age-grid{grid-template-columns:repeat(2,1fr)}.book-grid{grid-template-columns:repeat(2,1fr)}.sidebar{width:190px}.manager-main{margin-left:190px;width:calc(100% - 190px);padding:25px}.stat-grid{grid-template-columns:repeat(2,1fr)}.book-admin-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.container{width:min(100% - 24px,1120px)}.topbar-inner{height:68px;gap:10px}.manager-link{display:none}.hero h1{font-size:42px}.hero-points{flex-direction:column;gap:4px}.book-grid{grid-template-columns:1fr 1fr;gap:10px}.book-cover{height:185px}.section{padding:56px 0}.section-heading.books-heading{align-items:flex-start;gap:10px;flex-direction:column}.sidebar{position:relative;width:100%;height:auto;inset:auto}.manager-app{display:block}.manager-main{margin:0;width:100%;padding:20px}.manager-top{align-items:flex-start}.manager-top h1{font-size:30px}.book-admin-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}}
+
+/* Embedded manager */
+.manager-open-btn{border:0;background:transparent;padding:6px 2px;font-weight:700;font-size:11px;cursor:pointer}
+.manager-overlay{position:fixed;inset:0;z-index:1000;overflow:auto;background:#f7f7f4}
+.manager-overlay .manager-login-screen{min-height:100vh}
+.manager-toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#292a33;color:#fff;padding:12px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:.25s;z-index:1200;font-size:13px}.manager-toast.show{opacity:1;transform:translate(-50%,0)}
+.manager-exit-btn{position:absolute;right:14px;top:10px;width:34px;height:34px;border-radius:50%;background:#f7f4ee;font-size:24px;color:#777;line-height:1}
+.login-card{position:relative}
+.manager-overlay .manager-app{min-height:100vh}
+@media(max-width:640px){.manager-open-btn{font-size:10px}.manager-overlay .sidebar{position:relative;width:100%;height:auto;inset:auto}.manager-overlay .manager-main{margin:0;width:100%;padding:20px}}
+
+</style>
+</head>
+<body data-page="shop">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">몽</span><span>몽글책방</span></a>
+      <nav class="nav">
+        <a href="#books">그림책</a>
+        <a href="#age">연령별</a>
+        <a href="#new">신간</a>
+        <a href="#about">출판사 소개</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="검색">🔍</button>
+        <button class="icon-btn" id="profileBtn" aria-label="프로필">👤</button>
+        <button class="cart-btn" id="cartBtn">🛒 <span id="cartCount">0</span></button>
+        <button class="menu-btn" id="menuBtn" aria-label="메뉴" type="button"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">아이의 첫 번째 상상 친구</div>
+          <h1>오늘은 어떤 이야기를<br><span>읽어볼까요?</span></h1>
+          <p>따뜻한 그림과 다정한 이야기로 아이들의 하루에 작은 모험을 선물해요.</p>
+          <div class="hero-buttons">
+            <a class="primary-btn" href="#books">책 둘러보기</a>
+            <a class="secondary-btn" href="#about">몽글책방 이야기</a>
+          </div>
+          <div class="hero-points"><span>✓ 국내 창작 그림책</span><span>✓ 연령별 추천</span><span>✓ 안전한 포장</span></div>
+        </div>
+        <div class="hero-illustration">
+          <div class="cloud c1"></div><div class="cloud c2"></div>
+          <div class="sun">☀️</div>
+          <div class="storybook-hero"><div class="book-title">토끼의<br>첫 소풍</div><div class="rabbit">🐰</div></div>
+          <div class="grass"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="age">
+      <div class="container">
+        <div class="section-heading"><div><div class="eyebrow">FIND YOUR BOOK</div><h2>연령별로 골라보세요</h2></div></div>
+        <div class="age-grid">
+          <button class="age-card" data-age="0~2세"><span>🍼</span><strong>0~2세</strong><small>첫 그림책</small></button>
+          <button class="age-card" data-age="3~4세"><span>🌱</span><strong>3~4세</strong><small>이야기 시작</small></button>
+          <button class="age-card" data-age="5~6세"><span>🪁</span><strong>5~6세</strong><small>상상력 쑥쑥</small></button>
+          <button class="age-card" data-age="7세 이상"><span>🚀</span><strong>7세 이상</strong><small>스스로 읽기</small></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section pale" id="new">
+      <div class="container">
+        <div class="section-heading"><div><div class="eyebrow">NEW BOOKS</div><h2>이번 달 신간</h2></div><a href="#books" class="text-link">전체 보기 →</a></div>
+        <div class="book-grid" id="newBooks"></div>
+      </div>
+    </section>
+
+    <section class="section" id="books">
+      <div class="container">
+        <div class="section-heading books-heading"><div><div class="eyebrow">MONGLE BOOKS</div><h2>몽글몽글 그림책</h2></div><div class="filter-row"><select id="ageFilter"><option value="전체">전체 연령</option><option>0~2세</option><option>3~4세</option><option>5~6세</option><option>7세 이상</option></select><select id="sortFilter"><option value="popular">인기순</option><option value="new">신간순</option><option value="price-low">낮은 가격순</option><option value="price-high">높은 가격순</option></select></div></div>
+        <div class="search-panel hidden" id="searchPanel"><input id="searchInput" type="search" placeholder="책 제목, 작가를 검색해보세요" /><button id="clearSearch">지우기</button></div>
+        <div class="book-grid" id="bookGrid"></div>
+      </div>
+    </section>
+
+    <section class="section pale" id="about">
+      <div class="container about-grid">
+        <div><div class="eyebrow">ABOUT MONGLE</div><h2>책을 통해<br>세상을 처음 만나는 순간</h2></div>
+        <div class="about-copy"><p>몽글책방은 아이들이 책을 펼치는 순간마다 새로운 친구를 만나고, 마음껏 상상할 수 있기를 바라며 시작한 작은 출판사예요.</p><p>좋은 이야기, 오래 보고 싶은 그림, 부모님이 안심할 수 있는 책을 만들겠습니다.</p><div class="signature">— 몽글책방 편집팀</div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><div><strong>몽글책방</strong><p>아이의 첫 번째 상상 친구를 만나는 곳</p></div><div class="footer-small">© 2026 MONGLE BOOKS · Demo Store</div></div></footer>
+
+  <div class="menu-backdrop hidden" id="menuBackdrop"></div>
+  <aside class="side-drawer" id="sideDrawer" aria-hidden="true">
+    <div class="drawer-head"><strong>메뉴</strong><button class="close-btn" id="menuClose" type="button">×</button></div>
+    <nav class="drawer-nav">
+      <a href="#books" data-drawer-close>📚 그림책</a>
+      <a href="#age" data-drawer-close>🌱 연령별 책</a>
+      <a href="#new" data-drawer-close>✨ 신간</a>
+      <a href="#about" data-drawer-close>🏢 출판사 소개</a>
+      <button type="button" id="staffOnlyBtn">🔒 직원 전용</button>
+    </nav>
+    <div class="drawer-note">직원 전용 메뉴는 별도의 아이디와 비밀번호가 필요합니다.</div>
+  </aside>
+
+  <dialog id="authDialog" class="modal auth-dialog"><div class="modal-head"><h3 id="authTitle">로그인</h3><button class="close-btn" data-close="authDialog">×</button></div>
+    <div class="auth-tabs"><button class="auth-tab active" id="loginTab" type="button">로그인</button><button class="auth-tab" id="signupTab" type="button">회원가입</button></div>
+    <div id="authMessage" class="auth-message"></div>
+    <form id="loginForm" class="auth-form">
+      <label>아이디<input name="id" autocomplete="username" required placeholder="아이디" /></label>
+      <label>비밀번호<input type="password" name="pw" autocomplete="current-password" required placeholder="비밀번호" /></label>
+      <button class="primary-btn" type="submit">로그인</button>
+    </form>
+    <form id="signupForm" class="auth-form hidden">
+      <label>이름<input name="name" required placeholder="홍길동" /></label>
+      <label>아이디<input name="id" required minlength="4" placeholder="4자 이상" /></label>
+      <label>비밀번호<input type="password" name="pw" required minlength="4" placeholder="4자 이상" /></label>
+      <label>비밀번호 확인<input type="password" name="pw2" required minlength="4" placeholder="한 번 더 입력" /></label>
+      <label>전화번호<input name="phone" placeholder="010-0000-0000" /></label>
+      <label class="full-field">기본 배송지<input name="address" placeholder="서울시 ○○구 ○○로" /></label>
+      <button class="primary-btn" type="submit">회원가입</button>
+    </form>
+    <p class="auth-demo">※ 학교 프로젝트용 데모 회원 시스템입니다. 비밀번호는 이 브라우저에 저장됩니다.</p>
+  </dialog>
+
+  <dialog id="profileDialog" class="modal"><div class="modal-head"><h3>내 프로필</h3><button class="close-btn" data-close="profileDialog">×</button></div><div id="profileContent"></div></dialog>
+  <dialog id="cartDialog" class="modal"><div class="modal-head"><h3>장바구니</h3><button class="close-btn" data-close="cartDialog">×</button></div><div id="cartContent"></div></dialog>
+  <dialog id="bookDialog" class="modal book-detail-modal"><div class="modal-head"><h3>책 상세</h3><button class="close-btn" data-close="bookDialog">×</button></div><div id="bookDetail"></div></dialog>
+  <dialog id="orderDialog" class="modal"><div class="modal-head"><h3>주문하기</h3><button class="close-btn" data-close="orderDialog">×</button></div><form id="orderForm" class="form-grid"><label>이름<input required name="name" placeholder="홍길동" /></label><label>전화번호<input required name="phone" placeholder="010-0000-0000" /></label><label class="full">배송지<input required name="address" placeholder="서울시 ○○구 ○○로" /></label><label class="full">요청사항<textarea name="memo" placeholder="문 앞에 놓아주세요"></textarea></label><button class="primary-btn full" type="submit">주문 접수하기</button></form></dialog>
+
+  <!-- 점장 전용 로그인 -->
+  <div id="managerOverlay" class="manager-overlay hidden">
+    <div class="manager-toast" id="managerToast" aria-live="polite"></div>
+    <div id="managerLogin" class="manager-login-screen">
+      <div class="login-card">
+        <button class="manager-exit-btn" id="managerLoginClose" type="button">×</button>
+        <div class="brand center"><span class="brand-mark">몽</span><span>몽글책방 직원실</span></div>
+        <p>직원 전용 관리 페이지입니다.</p>
+        <form id="managerLoginForm">
+          <label>아이디<input name="id" required value="manager" /></label>
+          <label>비밀번호<input type="password" name="pw" required placeholder="demo1234" /></label>
+          <button class="primary-btn" type="submit">직원실 들어가기</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="managerApp" class="manager-app hidden">
+      <aside class="sidebar">
+        <a class="brand" href="#" id="managerHomeBtn"><span class="brand-mark">몽</span><span>몽글책방</span></a>
+        <div class="admin-label">MANAGER CONSOLE</div>
+        <button class="side-link active" data-section="dashboard">📊 대시보드</button>
+        <button class="side-link" data-section="orders">📦 주문 관리</button>
+        <button class="side-link" data-section="members">👥 회원 관리</button>
+        <button class="side-link" data-section="books">📚 책 관리</button>
+        <button class="side-link" data-section="shipping">🚚 배송 관리</button>
+        <div class="sidebar-bottom"><button id="managerCloseBtn">쇼핑몰 보기 ↗</button><button id="logoutBtn">로그아웃</button></div>
+      </aside>
+      <main class="manager-main">
+        <header class="manager-top"><div><div class="eyebrow">TODAY, OCTOBER 7 2026</div><h1 id="managerTitle">대시보드</h1></div><div class="manager-user">👤 점장님</div></header>
+        <section class="manager-section" id="dashboardSection"></section>
+        <section class="manager-section hidden" id="ordersSection"></section>
+        <section class="manager-section hidden" id="membersSection"></section>
+        <section class="manager-section hidden" id="booksSection"></section>
+        <section class="manager-section hidden" id="shippingSection"></section>
+      </main>
+    </div>
+  </div>
+
+  <dialog id="memberDialog" class="modal"><div class="modal-head"><h3>회원 프로필</h3><button class="close-btn" data-close="memberDialog">×</button></div><div id="memberDetail"></div></dialog>
+  <dialog id="orderManagerDialog" class="modal"><div class="modal-head"><h3>주문 상세</h3><button class="close-btn" data-close="orderManagerDialog">×</button></div><div id="orderDetail"></div></dialog>
+
+  <div class="toast" id="toast"></div>
+<script>
+const BOOKS = [
+  {id:1,title:'토끼의 첫 소풍',author:'김다온',age:'3~4세',price:12000,likes:128,new:true,emoji:'🐰',bg:'#ffd7c7',desc:'처음으로 혼자 소풍을 떠난 토끼가 숲속 친구들과 나누는 따뜻한 하루.'},
+  {id:2,title:'달님 우체국',author:'서유리',age:'5~6세',price:13500,likes:97,new:true,emoji:'🌙',bg:'#ddd6ff',desc:'밤하늘로 편지를 보내면 달님이 어떤 답장을 보내줄까요? 상상 가득한 이야기.'},
+  {id:3,title:'꼬마 고래의 노래',author:'박하늘',age:'0~2세',price:11000,likes:84,new:true,emoji:'🐳',bg:'#c9edff',desc:'바닷속 친구들의 소리와 리듬을 따라가며 읽는 포근한 아기 그림책.'},
+  {id:4,title:'구름빵 가게',author:'이봄',age:'5~6세',price:14500,likes:156,new:false,emoji:'☁️',bg:'#fff0ae',desc:'구름으로 만든 빵을 파는 가게에서 벌어지는 귀엽고 엉뚱한 하루.'},
+  {id:5,title:'잠이 안 오는 아기곰',author:'최소율',age:'0~2세',price:10500,likes:73,new:false,emoji:'🐻',bg:'#e4f1cf',desc:'잠이 오지 않는 아기곰이 숲속 친구들을 만나며 밤을 배워가는 이야기.'},
+  {id:6,title:'별을 주운 아이',author:'정윤서',age:'7세 이상',price:15500,likes:112,new:false,emoji:'⭐',bg:'#d6e7ff',desc:'하늘에서 떨어진 작은 별을 주운 아이의 비밀스러운 모험과 성장 이야기.'},
+  {id:7,title:'엄마의 초록 우산',author:'나유진',age:'3~4세',price:12500,likes:61,new:false,emoji:'🌂',bg:'#d7f0df',desc:'비 오는 날 초록 우산 하나가 만들어 준 다정한 추억을 담은 그림책.'},
+  {id:8,title:'숲속 빵집의 손님',author:'오서진',age:'7세 이상',price:16000,likes:88,new:false,emoji:'🥐',bg:'#ffe0b7',desc:'숲속 빵집을 찾는 동물 손님들과 작은 빵집 주인의 따뜻한 우정.'}
+];
+const guestUser={name:'게스트',id:'guest',likes:[],hidden:[]};
+const savedCurrent=JSON.parse(localStorage.getItem('mongle_current_user')||'null');
+const state={books:BOOKS,cart:JSON.parse(localStorage.getItem('mongle_cart')||'[]'),user:savedCurrent||guestUser};
+const $=s=>document.querySelector(s);const $$=s=>[...document.querySelectorAll(s)];
+function isLoggedIn(){return !!localStorage.getItem('mongle_current_user')}
+function allUsers(){return JSON.parse(localStorage.getItem('mongle_users')||'[]')}
+function setCurrentUser(u){state.user={...guestUser,...u};localStorage.setItem('mongle_current_user',JSON.stringify(state.user));save()}
+function save(){localStorage.setItem('mongle_cart',JSON.stringify(state.cart));if(isLoggedIn())localStorage.setItem('mongle_current_user',JSON.stringify(state.user))}
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.__toast);window.__toast=setTimeout(()=>t.classList.remove('show'),1800)}
+function formatWon(n){return n.toLocaleString('ko-KR')+'원'}
+function renderBookCard(b){const liked=state.user.likes.includes(b.id);const hidden=state.user.hidden.includes(b.id);if(hidden)return '';return `<article class="book-card"><div class="book-cover" style="background:${b.bg}" data-id="${b.id}"><div class="cover-title">${b.title}</div><div class="cover-emoji">${b.emoji}</div></div><div class="book-info"><div class="book-name" data-id="${b.id}">${b.title}</div><div class="meta">${b.author} · ${b.age} · ♥ ${b.likes+(liked?1:0)}</div><div class="price-row"><div class="price">${formatWon(b.price)}</div><div class="book-actions"><button class="mini-btn like-btn ${liked?'liked':''}" data-like="${b.id}">${liked?'♥':'♡'}</button><button class="mini-btn" data-cart="${b.id}">담기</button></div></div></div></article>`}
+function renderBooks(){const q=($('#searchInput')?.value||'').trim().toLowerCase();const age=$('#ageFilter')?.value||'전체';const sort=$('#sortFilter')?.value||'popular';let list=state.books.filter(b=>(age==='전체'||b.age===age)&&(!q||`${b.title} ${b.author}`.toLowerCase().includes(q))&&!state.user.hidden.includes(b.id));if(sort==='popular')list.sort((a,b)=>b.likes-a.likes);if(sort==='new')list.sort((a,b)=>Number(b.new)-Number(a.new));if(sort==='price-low')list.sort((a,b)=>a.price-b.price);if(sort==='price-high')list.sort((a,b)=>b.price-a.price);$('#bookGrid').innerHTML=list.length?list.map(renderBookCard).join(''):`<div class="notice" style="grid-column:1/-1">조건에 맞는 책이 없어요. 검색어나 연령을 바꿔보세요.</div>`;$('#newBooks').innerHTML=state.books.filter(b=>b.new&&!state.user.hidden.includes(b.id)).slice(0,4).map(renderBookCard).join('');$('#cartCount').textContent=state.cart.reduce((s,x)=>s+x.qty,0)}
+function openBook(id){const b=state.books.find(x=>x.id===id);$('#bookDetail').innerHTML=`<div class="detail-cover" style="background:${b.bg}"><div class="cover-emoji">${b.emoji}</div></div><h4 class="detail-title">${b.title}</h4><div class="meta">${b.author} · ${b.age}</div><p class="detail-desc">${b.desc}</p><div class="price-row"><strong class="price">${formatWon(b.price)}</strong><div class="book-actions"><button class="mini-btn" onclick="addCart(${b.id});document.querySelector('#bookDialog').close()">장바구니 담기</button><button class="mini-btn like-btn ${state.user.likes.includes(b.id)?'liked':''}" onclick="toggleLike(${b.id});openBook(${b.id})">${state.user.likes.includes(b.id)?'♥ 좋아요':'♡ 좋아요'}</button></div></div>`;$('#bookDialog').showModal()}
+function addCart(id){const item=state.cart.find(x=>x.id===id);if(item)item.qty++;else state.cart.push({id,qty:1});save();renderBooks();toast('장바구니에 담았어요 🛒')}
+function toggleLike(id){if(!isLoggedIn()){openAuth('login');return}const i=state.user.likes.indexOf(id);if(i>=0)state.user.likes.splice(i,1);else state.user.likes.push(id);save();renderBooks();toast(i>=0?'좋아요를 취소했어요':'좋아요를 눌렀어요 ❤️')}
+function hideBook(id){if(!isLoggedIn()){openAuth('login');return}if(!state.user.hidden.includes(id))state.user.hidden.push(id);save();renderBooks();toast('내 화면에서 숨겼어요 🙈')}
+function renderCart(){if(!state.cart.length){$('#cartContent').innerHTML='<div class="notice">장바구니가 비어 있어요. 마음에 드는 책을 담아보세요!</div>';return}let total=0;$('#cartContent').innerHTML=state.cart.map(x=>{const b=state.books.find(b=>b.id===x.id);total+=b.price*x.qty;return `<div class="cart-item"><div><strong>${b.title}</strong><div class="meta">${formatWon(b.price)} × ${x.qty}</div></div><button class="mini-btn" onclick="removeCart(${b.id})">삭제</button></div>`}).join('')+`<div class="cart-total"><span>총 결제금액</span><span>${formatWon(total)}</span></div><button class="primary-btn" style="width:100%" onclick="openOrder()">주문하기</button>`}
+function removeCart(id){state.cart=state.cart.filter(x=>x.id!==id);save();renderBooks();renderCart();toast('장바구니에서 삭제했어요')}
+function openOrder(){if(!state.cart.length)return toast('장바구니가 비어 있어요');if(!isLoggedIn()){toast('주문하려면 먼저 로그인해주세요 🔐');openAuth('login');return}const u=state.user;$('#orderForm [name=name]').value=u.name||'';$('#orderForm [name=phone]').value=u.phone||'';$('#orderForm [name=address]').value=u.address||'';$('#cartDialog').close();$('#orderDialog').showModal()}
+function showProfile(){if(!isLoggedIn()){openAuth('login');return}const likes=state.user.likes.map(id=>state.books.find(b=>b.id===id)?.title).filter(Boolean);const hidden=state.user.hidden.map(id=>state.books.find(b=>b.id===id)?.title).filter(Boolean);$('#profileContent').innerHTML=`<div class="member-main" style="padding:22px"><div class="avatar">🙂</div><div><div class="member-name">${state.user.name}</div><div class="member-meta">@${state.user.id}</div></div></div><div class="modal-body"><div class="detail-list"><div class="detail-row"><strong>전화번호</strong><span>${state.user.phone||'미등록'}</span></div><div class="detail-row"><strong>기본 배송지</strong><span>${state.user.address||'미등록'}</span></div><div class="detail-row"><strong>좋아요한 책</strong><span>${likes.length?likes.join(', '):'없음'}</span></div><div class="detail-row"><strong>숨긴 책</strong><span>${hidden.length?hidden.join(', '):'없음'}</span></div><div class="detail-row"><strong>회원 등급</strong><span>일반 회원</span></div></div><div style="display:flex;gap:8px;margin-top:18px"><button class="secondary-btn" style="flex:1" id="logoutMemberBtn">로그아웃</button><button class="primary-btn" style="flex:1" id="editMemberBtn">정보 수정</button></div></div>`;$('#profileDialog').showModal();$('#logoutMemberBtn').onclick=()=>{localStorage.removeItem('mongle_current_user');state.user=guestUser;state.cart=[];save();$('#profileDialog').close();renderBooks();toast('로그아웃했어요')};$('#editMemberBtn').onclick=()=>{showToastInfo('회원가입 정보 수정은 이 데모에서 기본 배송지/전화번호를 다시 입력하는 방식으로 준비할 수 있어요.')}}
+function restoreHidden(){if(!isLoggedIn())return openAuth('login');state.user.hidden=[];save();renderBooks();showProfile();toast('숨긴 책을 모두 복구했어요')}
+function setAuthMessage(msg,error=false){const el=$('#authMessage');el.textContent=msg;el.classList.toggle('error',error);el.classList.toggle('show',!!msg)}
+function showToastInfo(msg){setAuthMessage(msg,false);if(!$('#authDialog').open){$('#authDialog').showModal()}}
+function switchAuth(mode){const login=mode==='login';$('#authTitle').textContent=login?'로그인':'회원가입';$('#loginTab').classList.toggle('active',login);$('#signupTab').classList.toggle('active',!login);$('#loginForm').classList.toggle('hidden',!login);$('#signupForm').classList.toggle('hidden',login);setAuthMessage('')}
+function openAuth(mode='login'){switchAuth(mode);$('#authDialog').showModal();setTimeout(()=>$(mode==='login' ? '#loginForm [name=id]' : '#signupForm [name=name]')?.focus(),50)}
+function setupAuth(){if(localStorage.getItem('mongle_current_user')){const u=JSON.parse(localStorage.getItem('mongle_current_user'));state.user={...guestUser,...u}}$('#loginTab').onclick=()=>switchAuth('login');$('#signupTab').onclick=()=>switchAuth('signup');$('#loginForm').onsubmit=e=>{e.preventDefault();const fd=new FormData(e.target);const id=String(fd.get('id')).trim();const pw=String(fd.get('pw'));const user=allUsers().find(u=>u.id===id&&u.pw===pw);if(!user){setAuthMessage('아이디 또는 비밀번호가 맞지 않아요.',true);return}setCurrentUser(user);$('#authDialog').close();renderBooks();toast(`${user.name}님, 다시 오셨네요! 👋`)};$('#signupForm').onsubmit=e=>{e.preventDefault();const fd=new FormData(e.target);const id=String(fd.get('id')).trim();const pw=String(fd.get('pw'));const pw2=String(fd.get('pw2'));const users=allUsers();if(users.some(u=>u.id===id)){setAuthMessage('이미 사용 중인 아이디예요.',true);return}if(pw!==pw2){setAuthMessage('비밀번호가 서로 달라요.',true);return}const user={id,name:String(fd.get('name')).trim(),pw,phone:String(fd.get('phone')).trim(),address:String(fd.get('address')).trim(),likes:[],hidden:[],join:new Date().toISOString().slice(0,10),grade:'일반'};users.push(user);localStorage.setItem('mongle_users',JSON.stringify(users));setCurrentUser(user);$('#authDialog').close();renderBooks();toast('회원가입이 완료됐어요! 🎉')};}
+function setup(){renderBooks();setupAuth();$('#searchBtn').onclick=()=>{$('#searchPanel').classList.toggle('hidden');if(!$('#searchPanel').classList.contains('hidden'))$('#searchInput').focus()};$('#searchInput').oninput=renderBooks;$('#clearSearch').onclick=()=>{$('#searchInput').value='';renderBooks()};$('#ageFilter').onchange=renderBooks;$('#sortFilter').onchange=renderBooks;$('#profileBtn').onclick=showProfile;$('#cartBtn').onclick=()=>{renderCart();$('#cartDialog').showModal()};document.body.addEventListener('click',e=>{const id=e.target.dataset.id;if(e.target.matches('.book-cover,.book-name')&&id)openBook(Number(id));if(e.target.dataset.like)toggleLike(Number(e.target.dataset.like));if(e.target.dataset.cart)addCart(Number(e.target.dataset.cart))});$$('[data-close]').forEach(btn=>btn.onclick=()=>document.getElementById(btn.dataset.close).close());$$('.age-card').forEach(btn=>btn.onclick=()=>{$('#ageFilter').value=btn.dataset.age;document.querySelector('#books').scrollIntoView({behavior:'smooth'});renderBooks()});$('#orderForm').onsubmit=e=>{e.preventDefault();if(!isLoggedIn()){openAuth('login');return}const fd=new FormData(e.target);const items=state.cart.map(x=>({bookId:x.id,qty:x.qty}));const orders=JSON.parse(localStorage.getItem('mongle_orders')||'[]');const amount=state.cart.reduce((s,x)=>s+state.books.find(b=>b.id===x.id).price*x.qty,0);const order={id:'M'+Date.now().toString().slice(-6),member:state.user.name,memberId:state.user.id,phone:fd.get('phone'),address:fd.get('address'),memo:fd.get('memo'),items,amount,date:new Date().toISOString().slice(0,10),time:new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit'}),status:'주문접수'};orders.unshift(order);localStorage.setItem('mongle_orders',JSON.stringify(orders));window.dispatchEvent(new CustomEvent('mongle:new-order',{detail:order}));if('BroadcastChannel' in window){try{new BroadcastChannel('mongle_orders_live').postMessage({type:'new-order',order})}catch(e){}}state.cart=[];save();e.target.reset();$('#orderDialog').close();renderBooks();toast('주문이 접수되었어요! 📦')};const menu=$('#sideDrawer'),back=$('#menuBackdrop');function closeMenu(){menu.classList.remove('open');back.classList.add('hidden');menu.setAttribute('aria-hidden','true')}$('#menuBtn').onclick=()=>{menu.classList.add('open');back.classList.remove('hidden');menu.setAttribute('aria-hidden','false')};$('#menuClose').onclick=closeMenu;back.onclick=closeMenu;$$('[data-drawer-close]').forEach(a=>a.onclick=closeMenu);$('#staffOnlyBtn').onclick=()=>{closeMenu();openManager()};}
+setup();window.addCart=addCart;window.toggleLike=toggleLike;window.openBook=openBook;window.restoreHidden=restoreHidden;window.removeCart=removeCart;window.openOrder=openOrder;window.openAuth=openAuth;
+
+</script>
+<script>
+const MANAGER_BOOKS = [
+  {id:1,title:'토끼의 첫 소풍',author:'김다온',age:'3~4세',price:12000,stock:18,emoji:'🐰',bg:'#ffd7c7'},
+  {id:2,title:'달님 우체국',author:'서유리',age:'5~6세',price:13500,stock:24,emoji:'🌙',bg:'#ddd6ff'},
+  {id:3,title:'꼬마 고래의 노래',author:'박하늘',age:'0~2세',price:11000,stock:31,emoji:'🐳',bg:'#c9edff'},
+  {id:4,title:'구름빵 가게',author:'이봄',age:'5~6세',price:14500,stock:12,emoji:'☁️',bg:'#fff0ae'},
+  {id:5,title:'잠이 안 오는 아기곰',author:'최소율',age:'0~2세',price:10500,stock:7,emoji:'🐻',bg:'#e4f1cf'},
+  {id:6,title:'별을 주운 아이',author:'정윤서',age:'7세 이상',price:15500,stock:16,emoji:'⭐',bg:'#d6e7ff'}
+];
+const MEMBERS=[
+ {id:'mongle_user',name:'세근',email:'segeun@example.com',phone:'010-1111-2222',join:'2026-09-13',orders:3,likes:6,address:'경기도 화성시 ○○로 12',grade:'일반'},
+ {id:'minji123',name:'김민지',email:'minji@example.com',phone:'010-2222-3333',join:'2026-09-20',orders:4,likes:7,address:'경기도 수원시 ○○구 20',grade:'VIP'},
+ {id:'junseo77',name:'이서준',email:'junseo@example.com',phone:'010-3333-4444',join:'2026-09-26',orders:2,likes:2,address:'서울시 송파구 ○○동 51',grade:'일반'},
+ {id:'haru_mom',name:'박하루',email:'haru@example.com',phone:'010-4444-5555',join:'2026-10-01',orders:1,likes:4,address:'인천시 연수구 ○○길 8',grade:'일반'},
+ {id:'dani07',name:'정다니',email:'dani@example.com',phone:'010-5555-6666',join:'2026-10-03',orders:1,likes:3,address:'부산시 해운대구 ○○로 9',grade:'일반'}
+];
+let orders=JSON.parse(localStorage.getItem('mongle_orders')||'[]');
+if(!orders.length){orders=[
+{id:'M104821',member:'김민지',phone:'010-2222-3333',address:'경기도 수원시 ○○구 20',memo:'문 앞에 놓아주세요',items:[{bookId:1,qty:2}],amount:24000,date:'2026-10-07',status:'배송준비'},
+{id:'M104820',member:'이서준',phone:'010-3333-4444',address:'서울시 송파구 ○○동 51',memo:'',items:[{bookId:2,qty:1}],amount:13500,date:'2026-10-07',status:'배송중'},
+{id:'M104819',member:'박하루',phone:'010-4444-5555',address:'인천시 연수구 ○○길 8',memo:'',items:[{bookId:5,qty:1},{bookId:3,qty:1}],amount:21500,date:'2026-10-06',status:'배송완료'},
+{id:'M104818',member:'세근',phone:'010-1111-2222',address:'경기도 화성시 ○○로 12',memo:'빠른 배송 부탁드려요',items:[{bookId:4,qty:1}],amount:14500,date:'2026-10-05',status:'배송완료'}
+];}
+function managerToast(msg){const t=$('#managerToast'); if(!t) return; t.textContent=msg; t.classList.add('show'); clearTimeout(window.__managerToastTimer); window.__managerToastTimer=setTimeout(()=>t.classList.remove('show'),1800)}
+function won(n){return n.toLocaleString('ko-KR')+'원'}
+function book(id){return MANAGER_BOOKS.find(b=>b.id===id)}
+function statusClass(s){if(s==='배송완료')return'done';if(s==='배송중')return'shipping';return'ready'}
+function renderDashboard(){const total=orders.reduce((s,o)=>s+o.amount,0);const memberCount=getAllMembersForManager().length;$('#dashboardSection').innerHTML=`<div class="live-order-bar"><span><span class="live-dot"></span><strong>주문 실시간 연결</strong></span><span id="liveOrderText">새 주문이 들어오면 이 화면에 바로 표시됩니다.</span></div><div class="stat-grid"><div class="stat-card"><div class="stat-label">오늘 주문</div><div class="stat-value">${orders.filter(o=>o.date==='2026-10-07').length}건</div></div><div class="stat-card"><div class="stat-label">전체 회원</div><div class="stat-value">${memberCount}명</div></div><div class="stat-card"><div class="stat-label">판매 중인 책</div><div class="stat-value">${MANAGER_BOOKS.length}권</div></div><div class="stat-card"><div class="stat-label">누적 매출</div><div class="stat-value">${won(total)}</div></div></div><div class="manager-grid"><div class="panel"><h3>최근 주문</h3>${orderTable(orders.slice(0,4))}</div><div class="panel"><h3>재고 부족 알림</h3><div class="notice">재고가 10권 이하인 도서를 확인해주세요.</div>${MANAGER_BOOKS.filter(b=>b.stock<=10).map(b=>`<div class="detail-row"><span>${b.emoji} ${b.title}</span><strong>${b.stock}권</strong></div>`).join('')}</div></div>`}
+function orderTable(list){return `<div class="table-wrap"><table class="data-table"><thead><tr><th>주문번호</th><th>회원</th><th>주문 책</th><th>금액</th><th>상태</th><th></th></tr></thead><tbody>${list.map(o=>{const names=o.items.map(i=>`${book(i.bookId).title}${i.qty>1?` × ${i.qty}`:''}`).join(', ');return `<tr><td>#${o.id}</td><td>${o.member}</td><td>${names}</td><td>${won(o.amount)}</td><td><span class="status ${statusClass(o.status)}">${o.status}</span></td><td><button class="action-link" onclick="showOrder('${o.id}')">상세</button></td></tr>`}).join('')}</tbody></table></div>`}
+function renderOrders(){orders=JSON.parse(localStorage.getItem('mongle_orders')||'[]').length?JSON.parse(localStorage.getItem('mongle_orders')):orders;$('#ordersSection').innerHTML=`<div class="panel"><div class="manager-toolbar"><input class="toolbar-search" id="orderSearch" placeholder="주문번호, 회원명 검색"/><select id="orderStatus"><option>전체 상태</option><option>주문접수</option><option>배송준비</option><option>배송중</option><option>배송완료</option></select></div><div id="orderTableMount"></div></div>`;const draw=()=>{const q=($('#orderSearch')?.value||'').toLowerCase();const st=$('#orderStatus')?.value||'전체 상태';const list=orders.filter(o=>(!q||`${o.id} ${o.member}`.toLowerCase().includes(q))&&(st==='전체 상태'||o.status===st));$('#orderTableMount').innerHTML=orderTable(list)};draw();$('#orderSearch').oninput=draw;$('#orderStatus').onchange=draw}
+function showOrder(id){const o=orders.find(x=>x.id===id);$('#orderDetail').innerHTML=`<div class="detail-list"><div class="detail-row"><strong>주문번호</strong><span>#${o.id}</span></div><div class="detail-row"><strong>회원</strong><span>${o.member}</span></div><div class="detail-row"><strong>전화번호</strong><span>${o.phone}</span></div><div class="detail-row"><strong>배송지</strong><span>${o.address}</span></div><div class="detail-row"><strong>주문일</strong><span>${o.date}</span></div><div class="detail-row"><strong>상품</strong><span>${o.items.map(i=>`${book(i.bookId).title} × ${i.qty}`).join('<br>')}</span></div><div class="detail-row"><strong>결제금액</strong><span>${won(o.amount)}</span></div><div class="detail-row"><strong>상태</strong><span><select id="orderStatusChange"><option ${o.status==='주문접수'?'selected':''}>주문접수</option><option ${o.status==='배송준비'?'selected':''}>배송준비</option><option ${o.status==='배송중'?'selected':''}>배송중</option><option ${o.status==='배송완료'?'selected':''}>배송완료</option></select></span></div><div class="detail-row"><strong>요청사항</strong><span>${o.memo||'없음'}</span></div></div><button class="primary-btn" style="width:100%;margin-top:18px" onclick="saveOrderStatus('${o.id}')">상태 저장</button>`;$('#orderManagerDialog').showModal()}
+function saveOrderStatus(id){const o=orders.find(x=>x.id===id);o.status=$('#orderStatusChange').value;localStorage.setItem('mongle_orders',JSON.stringify(orders));$('#orderManagerDialog').close();renderOrders();renderDashboard();managerToast('주문 상태를 저장했어요')}
+function getAllMembersForManager(){
+ const registered=JSON.parse(localStorage.getItem('mongle_users')||'[]').map(u=>({id:u.id,name:u.name,email:u.email||'미등록',phone:u.phone||'미등록',join:u.join||'',orders:orders.filter(o=>(o.memberId&&o.memberId===u.id)||o.member===u.name).length,likes:(u.likes||[]).length,address:u.address||'미등록',grade:u.grade||'일반'}));
+ const seen=new Set(registered.map(x=>x.id));
+ return registered.concat(MEMBERS.filter(x=>!seen.has(x.id)));
+}
+function renderMembers(){const data=getAllMembersForManager();const mount=()=>{const q=($('#memberSearch')?.value||'').toLowerCase();const list=data.filter(m=>`${m.name} ${m.id} ${m.email}`.toLowerCase().includes(q));$('#memberList').innerHTML=list.map(m=>`<div class="member-card"><div class="member-main"><div class="avatar">${m.name[0]}</div><div><div class="member-name">${m.name} <span class="pill">${m.grade}</span></div><div class="member-meta">@${m.id} · 주문 ${m.orders}회 · 좋아요 ${m.likes}개</div></div></div><button class="action-link" onclick="showMember('${m.id}')">프로필 보기</button></div>`).join('')||'<div class="notice">검색 결과가 없습니다.</div>'};$('#membersSection').innerHTML=`<div class="panel"><div class="manager-toolbar"><input class="toolbar-search" id="memberSearch" placeholder="이름, 아이디, 이메일 검색"/></div><div class="member-list" id="memberList"></div></div>`;mount();$('#memberSearch').oninput=mount}
+function showMember(id){const m=getAllMembersForManager().find(x=>x.id===id);if(!m)return;const memberOrders=orders.filter(o=>(o.memberId&&o.memberId===m.id)||o.member===m.name);$('#memberDetail').innerHTML=`<div class="member-main" style="padding:22px 22px 8px"><div class="avatar">${m.name[0]}</div><div><div class="member-name">${m.name}</div><div class="member-meta">@${m.id}</div></div></div><div class="modal-body"><div class="detail-list"><div class="detail-row"><strong>이메일</strong><span>${m.email}</span></div><div class="detail-row"><strong>전화번호</strong><span>${m.phone}</span></div><div class="detail-row"><strong>가입일</strong><span>${m.join}</span></div><div class="detail-row"><strong>회원등급</strong><span>${m.grade}</span></div><div class="detail-row"><strong>좋아요 수</strong><span>${m.likes}개</span></div><div class="detail-row"><strong>주문 횟수</strong><span>${m.orders}회</span></div><div class="detail-row"><strong>기본 배송지</strong><span>${m.address}</span></div></div><h4 style="margin:22px 0 10px">최근 주문</h4>${memberOrders.length?orderTable(memberOrders.slice(0,3)):'<div class="notice">주문 기록이 없습니다.</div>'}</div>`;$('#memberDialog').showModal()}
+
+function renderManagerBooks(){ $('#booksSection').innerHTML=`<div class="panel"><div class="manager-toolbar"><strong style="align-self:center">등록된 도서 ${MANAGER_BOOKS.length}권</strong><button class="primary-btn" id="addBookDemo">+ 새 책 등록</button></div><div class="book-admin-grid">${MANAGER_BOOKS.map(b=>`<div class="admin-book"><div class="book-cover" style="background:${b.bg}"><div class="cover-title">${b.title}</div><div class="cover-emoji">${b.emoji}</div></div><div class="book-info"><div class="book-name">${b.title}</div><div class="meta">${b.author} · ${b.age}</div><div class="price-row"><strong>${won(b.price)}</strong><span class="pill">재고 ${b.stock}</span></div></div></div>`).join('')}</div></div>`;$('#addBookDemo').onclick=()=>managerToast('새 책 등록 기능은 시연용으로 준비된 UI입니다')}
+function renderShipping(){const pending=orders.filter(o=>o.status!=='배송완료');$('#shippingSection').innerHTML=`<div class="panel"><div class="notice">배송 관리에서는 아직 완료되지 않은 주문을 한눈에 확인할 수 있어요.</div>${pending.length?orderTable(pending):'<div class="notice">처리할 배송이 없습니다.</div>'}</div>`}
+function showSection(section){const titles={dashboard:'대시보드',orders:'주문 관리',members:'회원 관리',books:'책 관리',shipping:'배송 관리'};$('#managerTitle').textContent=titles[section];$$('.manager-section').forEach(s=>s.classList.add('hidden'));$(`#${section}Section`).classList.remove('hidden');$$('.side-link').forEach(b=>b.classList.toggle('active',b.dataset.section===section));if(section==='dashboard')renderDashboard();if(section==='orders')renderOrders();if(section==='members')renderMembers();if(section==='books')renderManagerBooks();if(section==='shipping')renderShipping()}
+function init(){const overlay=$('#managerOverlay');$('#managerLoginForm').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);if(f.get('id')==='manager'&&f.get('pw')==='demo1234'){localStorage.setItem('mongle_staff_auth','1');enter()}else managerToast('아이디 또는 비밀번호가 틀렸어요')};$('#logoutBtn').onclick=()=>{localStorage.removeItem('mongle_staff_auth');exitManager();managerToast('직원실에서 로그아웃했어요')};$('#managerLoginClose').onclick=()=>exitManager();$('#managerCloseBtn').onclick=()=>exitManager();$('#managerHomeBtn').onclick=e=>{e.preventDefault();exitManager()};$$('.side-link').forEach(b=>b.onclick=()=>showSection(b.dataset.section));$$('[data-close]').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.close).close());overlay.addEventListener('click',e=>{if(e.target===overlay)exitManager()})}
+function openManager(){const overlay=$('#managerOverlay');overlay.classList.remove('hidden');if(localStorage.getItem('mongle_staff_auth')==='1')enter();else{ $('#managerLogin').classList.remove('hidden'); $('#managerApp').classList.add('hidden'); }}
+function exitManager(){$('#managerOverlay').classList.add('hidden');$('#managerLogin').classList.remove('hidden');$('#managerApp').classList.add('hidden')}
+function enter(){$('#managerLogin').classList.add('hidden');$('#managerApp').classList.remove('hidden');showSection('dashboard')}
+window.showOrder=showOrder;window.showMember=showMember;window.saveOrderStatus=saveOrderStatus;init();
+
+window.openManager=openManager;window.exitManager=exitManager;
+
+
+(function setupLiveOrders(){
+  const refresh=()=>{
+    const data=JSON.parse(localStorage.getItem('mongle_orders')||'[]');
+    if(Array.isArray(data)&&data.length) orders=data;
+    const appVisible=!$('#managerOverlay')?.classList.contains('hidden') && !$('#managerApp')?.classList.contains('hidden');
+    if(appVisible){
+      const section=$$('.side-link.active')[0]?.dataset.section||'dashboard';
+      if(section==='dashboard')renderDashboard();
+      if(section==='orders')renderOrders();
+      if(section==='shipping')renderShipping();
+      if(section==='members')renderMembers();
+    }
+  };
+  window.addEventListener('storage',e=>{ if(e.key==='mongle_orders' || e.key==='mongle_users') refresh(); });
+  window.addEventListener('mongle:new-order',e=>{ refresh(); if(typeof managerToast==='function' && !$('#managerOverlay')?.classList.contains('hidden')) managerToast(`새 주문 ${e.detail?.member||''}님이 들어왔어요 📦`); });
+  if('BroadcastChannel' in window){ try{ const ch=new BroadcastChannel('mongle_orders_live'); ch.onmessage=e=>{ if(e.data?.type==='new-order'){ refresh(); if(typeof managerToast==='function' && !$('#managerOverlay')?.classList.contains('hidden')) managerToast(`새 주문 ${e.data.order?.member||''}님이 들어왔어요 📦`); } }; }catch(e){} }
+})();
+</script>
+</body>
+</html>
